@@ -1,7 +1,7 @@
 /* custom css for web app */
 body {
   background-color: #161625 !important;
-  height: 100vh;
+  min-height: 100vh;
 }
 .navbar.is-black{
   background-color: #1e1e30 !important;
