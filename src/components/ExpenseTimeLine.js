@@ -4,11 +4,12 @@ import 'bulma-timeline/dist/css/bulma-timeline.min.css';
 // importing components
 import { TimelineItem } from './TimelineItem';
 import { TimelineHeader } from './TimelineHeader';
+import { BoxHeader } from './BoxHeader';
 
 export const ExpenseTimeLine = ({timelineTitle}) => {
     return (
         <div className='box has-background-flat'>
-            <span className='has-text-primary'>{timelineTitle}</span>
+            <BoxHeader headerText={timelineTitle} />
             <hr className='flat-record-divider'/>
             <div className='timeline'>
                 <TimelineHeader title='Latest' />

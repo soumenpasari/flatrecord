@@ -12,9 +12,6 @@ export const AppWrapper = () => {
                     <AmountAction />
                 </div>
                 <div className='column is-4'>
-                    <ExpenseTimeLine timelineTitle='Expense log this month' />
-                </div>
-                <div className='column is-4'>
                     <ExpenseSummaryTotal
                         title='Monthly Expense Balance'
                         totalValue='24,566'
@@ -27,6 +24,9 @@ export const AppWrapper = () => {
                         creditValue='0.0'
                         debitValue='562'
                     />
+                </div>
+                <div className='column is-4'>
+                    <ExpenseTimeLine timelineTitle='Expense log this month' />
                 </div>
             </div>
         </div>

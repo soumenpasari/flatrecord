@@ -20,7 +20,7 @@ export const TimelineItem = ({expenseDate,expenseTitle,expenseAmount,expenseType
                     <span>{expenseTitle} - &#8377; {expenseAmount}</span>
                 </p>
                 <button 
-                className='button is-small is-rounded is-black has-text-danger is-side-action' 
+                className='button is-small is-rounded is-black has-text-light is-side-action' 
                 type='button'>
                     &#10539;
                 </button>
