@@ -1,1 +1,35 @@
 /* custom css for web app */
+body {
+  background-color: #161625 !important;
+  min-height: 100vh;
+}
+.navbar.is-black{
+  background-color: #1e1e30 !important;
+}
+.has-upper-margin {
+  margin-top: 10px !important;
+}
+.has-background-flat {
+  background-color: #101024 !important;
+  color: #fff !important;
+}
+.flat-record-divider {
+  background-color: #1e1e30 !important;
+}
+.input, .select select, .textarea {
+  background-color: #1e1e30 !important;
+  border-color: #1e1e30 !important;
+  border-radius: 4px;
+  color: #fff !important;
+}
+.button.is-full-width {
+  width: 100% !important;
+}
+::placeholder{
+  color: rgb(204, 201, 201) !important;
+}
+.button.is-side-action {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
