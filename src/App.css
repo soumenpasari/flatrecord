@@ -33,3 +33,6 @@ body {
   top: 10px;
   right: 0px;
 }
+.box .subtitle {
+  font-size: 15px !important;
+}

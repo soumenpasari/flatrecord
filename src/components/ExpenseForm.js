@@ -10,6 +10,7 @@ export const ExpenseForm = () => {
         <form>
             <Textbar placeholder='Expense title' flatIdName='TitleExp' type='text' />
             <Textbar placeholder='Amount' flatIdName='TitleExp' type='number' />
+            <Textbar placeholder='Dates' flatIdName='Date' type='date' value='2020-06-18' />
             <RadioBtn />
             <FormButton title='Submit' type='submit' />
         </form>
