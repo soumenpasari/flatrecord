@@ -16,7 +16,7 @@ body {
 .flat-record-divider {
   background-color: #1e1e30 !important;
 }
-.input, .select select, .textarea {
+.input, .select select, .textarea, .file {
   background-color: #1e1e30 !important;
   border-color: #1e1e30 !important;
   border-radius: 4px;
@@ -35,4 +35,8 @@ body {
 }
 .box .subtitle {
   font-size: 15px !important;
+}
+.file .file-cta {
+  background-color: #1e1e30 !important;
+  color: #fff;
 }

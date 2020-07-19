@@ -14,7 +14,7 @@ const getCurrentDate = () => {
 const timeLineData = [
     {
         'expenseDate':'12th July 2020',
-        'expenseTitle':'Drinking water bottle can',
+        'expenseTitle':'Drinking water 20 litres bottle from shop got delivered!',
         'expenseAmount' : 40,
         'expenseType': 'dr'
     },
