@@ -43,3 +43,6 @@ body {
 .file .file-cta:hover, .file .file-name:hover {
   color : #fff !important;
 }
+.has-text-flat {
+  color : #a2a2b6 !important
+}

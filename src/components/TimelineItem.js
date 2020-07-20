@@ -16,7 +16,7 @@ export const TimelineItem = ({expenseDate,expenseTitle,expenseAmount,expenseType
             <div className={'timeline-marker is-icon has-text-light '+ colorCode}>&#8377;</div>
             <div className='timeline-content'>
                 <p className='heading has-text-primary'>{expenseDate}</p>
-                <p className='has-text-light'>
+                <p className='has-text-flat'>
                     <span>{expenseTitle} - &#8377; {expenseAmount}</span>
                 </p>
                 <button 
