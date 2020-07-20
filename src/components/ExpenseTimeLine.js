@@ -46,12 +46,13 @@ export const ExpenseTimeLine = ({timelineTitle}) => {
             <div className='timeline'>
                 <TimelineHeader title={getCurrentDate()} />
                 {
-                    timeLineData.map(data=> (
+                    timeLineData.map((data,index)=> (
                         <TimelineItem 
                             expenseDate={data.expenseDate}
                             expenseTitle={data.expenseTitle}
                             expenseAmount={data.expenseAmount}
                             expenseType={data.expenseType}
+                            key={index}
                         />
                     ))
                 }

@@ -40,3 +40,6 @@ body {
   background-color: #1e1e30 !important;
   color: #fff;
 }
+.file .file-cta:hover, .file .file-name:hover {
+  color : #fff !important;
+}
