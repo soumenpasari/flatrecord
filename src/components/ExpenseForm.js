@@ -12,6 +12,7 @@ export const ExpenseForm = () => {
     const [expenseAmout,setExpenseAmount] = useState('');
     const [expenseDate,setExpenseDate] = useState('2020-06-18');
     const [fileInfo,setFileInfo] = useState(null);
+    const [expenseTag,setExpenseTag] = useState('');
     // setting states of input fields
     const setExpenseTitleValue = (value) => {
         setExpenseTitle(value);
@@ -24,6 +25,9 @@ export const ExpenseForm = () => {
     }
     const setFileInputInfo = (e) => {
         setFileInfo(e.target.files[0]);
+    }
+    const setExpenseTagValue = (value) => {
+        setExpenseTag(value);
     }
     // radio buttons data
     const radioBtnConfig = [
@@ -50,6 +54,8 @@ export const ExpenseForm = () => {
             type='number' value={expenseAmout} inputValue={setExpenseAmountValue} />
             <Textbar placeholder='Dates' flatIdName='expenseDate' 
             type='date' value={expenseDate} inputValue={setExpenseDateValue} />
+            <Textbar placeholder='Tag eg, bill, groceries,rent' 
+            flatIdName='expenseCategory' value={expenseTag} inputValue={setExpenseTagValue} />
             <FileInput fileInfo={setFileInputInfo} selectedFileName={fileInfo && fileInfo.name} />
             <RadioBtn config={radioBtnConfig} />
             <FormButton title='Submit' type='submit' />

@@ -46,3 +46,6 @@ body {
 .has-text-flat {
   color : #a2a2b6 !important
 }
+.box .is-flat {
+  background-color: #1e1e30 !important;
+}
