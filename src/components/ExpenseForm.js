@@ -13,7 +13,7 @@ import { FileInput } from './forms/FileInput';
 export const ExpenseForm = () => {
     // setting states
     const [expenseTitle,setExpenseTitle] = useState('');
-    const [expenseAmout,setExpenseAmount] = useState('');
+    const [expenseAmount,setExpenseAmount] = useState('');
     const [expenseDate,setExpenseDate] = useState('2020-06-18');
     const [fileInfo,setFileInfo] = useState(null);
     const [expenseTag,setExpenseTag] = useState('');
@@ -40,17 +40,51 @@ export const ExpenseForm = () => {
     // form handler
     const submitExpForm = (e) => {
         e.preventDefault();
-        // TODO :: Validation of the form
-        if(expenseTitle === '' || expenseAmout==='' || expenseDate ==='' || expenseTag==='' 
-        || expenseType==='')
+        // Validation of the form
+        const valForm = validateForm();
+        if(valForm.success === true)
         {
-            toast.error('Fill the form properly!');
+            // TODO:: submit the data and on success show the message
+            // TODO:: on success clear the form ie; form related states
+            toast.dark('Expense has been added!');
         }
         else
         {
-            // form gets submited
-            toast.dark('Form submitted!');
+            toast.error(valForm.message);
         }
+    }
+    const validateForm = () => {
+        let finalResult = {
+            'success':false,
+            'message':null
+        }
+        if(expenseTitle.trim() === '')
+        {
+            finalResult.message = 'Expense title is empty!';
+        }
+        else if (expenseAmount.trim() === '' || expenseAmount.trim() === '0')
+        {
+            finalResult.message = 'Amount cannot be empty or zero!';
+        }
+        else if (expenseDate.trim() === '')
+        {
+            finalResult.message = 'Date is not filled for the expense!';
+        }
+        else if (expenseTag.trim() === '')
+        {
+            finalResult.message = 'Tag or category for expense is not filled!';
+        }
+        else if (expenseType === '')
+        {
+            finalResult.message = 'Expense type is not selected, i.e; credit or debit!'
+        }
+        else
+        {
+            // here submitting the data of the form and success message shown
+            finalResult.message = 'Form looks good!';
+            finalResult.success = true;
+        }
+        return (finalResult)
     }
     // radio buttons data
     const radioBtnConfig = [
@@ -74,7 +108,7 @@ export const ExpenseForm = () => {
             <Textbar placeholder='Expense title' flatIdName='expenseTitle' 
             type='text' value={expenseTitle} inputValue={setExpenseTitleValue} />
             <Textbar placeholder='Amount' flatIdName='expenseAmount' 
-            type='number' value={expenseAmout} inputValue={setExpenseAmountValue} />
+            type='number' value={expenseAmount} inputValue={setExpenseAmountValue} />
             <Textbar placeholder='Dates' flatIdName='expenseDate' 
             type='date' value={expenseDate} inputValue={setExpenseDateValue} />
             <Textbar placeholder='Tag eg, bill, groceries,rent' 
