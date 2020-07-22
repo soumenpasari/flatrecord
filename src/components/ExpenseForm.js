@@ -41,15 +41,16 @@ export const ExpenseForm = () => {
     const submitExpForm = (e) => {
         e.preventDefault();
         // TODO :: Validation of the form
-        toast.dark('Message', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            });
+        if(expenseTitle === '' || expenseAmout==='' || expenseDate ==='' || expenseTag==='' 
+        || expenseType==='')
+        {
+            toast.error('Fill the form properly!');
+        }
+        else
+        {
+            // form gets submited
+            toast.dark('Form submitted!');
+        }
     }
     // radio buttons data
     const radioBtnConfig = [
@@ -81,7 +82,17 @@ export const ExpenseForm = () => {
             <FileInput fileInfo={setFileInputInfo} selectedFileName={fileInfo && fileInfo.name} />
             <RadioBtn config={radioBtnConfig} getValue={readioBtnClick} />
             <FormButton title='Submit' type='submit' />
-            <ToastContainer />
+            <ToastContainer 
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            />
         </form>
     )
 }
