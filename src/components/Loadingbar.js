@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropType from 'prop-types';
 
 export const Loadingbar = ({title}) => {
     return (
@@ -7,4 +8,8 @@ export const Loadingbar = ({title}) => {
             <progress class="progress is-small is-info" max="100">100</progress>
         </div>
     )
+}
+
+Loadingbar.defaultProps = {
+    title : 'Loading ...'
 }
