@@ -1,5 +1,9 @@
 import React,{useState} from 'react';
 
+// imorting npm packages
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // importing other components
 import {Textbar} from '../components/forms/Textbar';
 import { FormButton } from './forms/FormButton';
@@ -37,6 +41,15 @@ export const ExpenseForm = () => {
     const submitExpForm = (e) => {
         e.preventDefault();
         // TODO :: Validation of the form
+        toast.dark('Message', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
     }
     // radio buttons data
     const radioBtnConfig = [
@@ -68,6 +81,7 @@ export const ExpenseForm = () => {
             <FileInput fileInfo={setFileInputInfo} selectedFileName={fileInfo && fileInfo.name} />
             <RadioBtn config={radioBtnConfig} getValue={readioBtnClick} />
             <FormButton title='Submit' type='submit' />
+            <ToastContainer />
         </form>
     )
 }
