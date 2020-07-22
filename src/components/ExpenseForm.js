@@ -13,6 +13,7 @@ export const ExpenseForm = () => {
     const [expenseDate,setExpenseDate] = useState('2020-06-18');
     const [fileInfo,setFileInfo] = useState(null);
     const [expenseTag,setExpenseTag] = useState('');
+    const [expenseType,setExpenseType] = useState('');
     // setting states of input fields
     const setExpenseTitleValue = (value) => {
         setExpenseTitle(value);
@@ -28,6 +29,14 @@ export const ExpenseForm = () => {
     }
     const setExpenseTagValue = (value) => {
         setExpenseTag(value);
+    }
+    const readioBtnClick = (value) => {
+        setExpenseType(value);
+    }
+    // form handler
+    const submitExpForm = (e) => {
+        e.preventDefault();
+        // TODO :: Validation of the form
     }
     // radio buttons data
     const radioBtnConfig = [
@@ -47,7 +56,7 @@ export const ExpenseForm = () => {
         }
     ];
     return (
-        <form>
+        <form onSubmit={submitExpForm}>
             <Textbar placeholder='Expense title' flatIdName='expenseTitle' 
             type='text' value={expenseTitle} inputValue={setExpenseTitleValue} />
             <Textbar placeholder='Amount' flatIdName='expenseAmount' 
@@ -57,7 +66,7 @@ export const ExpenseForm = () => {
             <Textbar placeholder='Tag eg, bill, groceries,rent' 
             flatIdName='expenseCategory' value={expenseTag} inputValue={setExpenseTagValue} />
             <FileInput fileInfo={setFileInputInfo} selectedFileName={fileInfo && fileInfo.name} />
-            <RadioBtn config={radioBtnConfig} />
+            <RadioBtn config={radioBtnConfig} getValue={readioBtnClick} />
             <FormButton title='Submit' type='submit' />
         </form>
     )
