@@ -1,6 +1,9 @@
 import React from 'react'
 
-export const Textbar = ({placeholder,flatIdName,type,value}) => {
+export const Textbar = ({placeholder,flatIdName,type,value,inputValue}) => {
+    const setValue = (e) => {
+        inputValue(e.target.value);
+    }
     return (
         <div className='field'>
             <div className='control'>
@@ -9,6 +12,7 @@ export const Textbar = ({placeholder,flatIdName,type,value}) => {
                 id={flatIdName} 
                 type={type}
                 value={value}
+                onChange={setValue}
                 />
             </div>
         </div>

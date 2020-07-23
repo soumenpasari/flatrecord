@@ -16,7 +16,7 @@ body {
 .flat-record-divider {
   background-color: #1e1e30 !important;
 }
-.input, .select select, .textarea {
+.input, .select select, .textarea, .file {
   background-color: #1e1e30 !important;
   border-color: #1e1e30 !important;
   border-radius: 4px;
@@ -26,10 +26,26 @@ body {
   width: 100% !important;
 }
 ::placeholder{
-  color: rgb(204, 201, 201) !important;
+  color: rgb(141, 141, 141) !important;
 }
 .button.is-side-action {
   position: absolute;
   top: 10px;
   right: 0px;
+}
+.box .subtitle {
+  font-size: 15px !important;
+}
+.file .file-cta {
+  background-color: #1e1e30 !important;
+  color: #fff;
+}
+.file .file-cta:hover, .file .file-name:hover {
+  color : #fff !important;
+}
+.has-text-flat {
+  color : #a2a2b6 !important
+}
+.box .is-flat {
+  background-color: #1e1e30 !important;
 }
