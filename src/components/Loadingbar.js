@@ -1,5 +1,4 @@
 import React from 'react';
-import PropType from 'prop-types';
 
 export const Loadingbar = ({title}) => {
     return (
