@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // importing packages
 import 'bulma-timeline/dist/css/bulma-timeline.min.css';
 import moment from 'moment';
@@ -6,39 +6,14 @@ import moment from 'moment';
 import { TimelineItem } from './TimelineItem';
 import { TimelineHeader } from './TimelineHeader';
 import { BoxHeader } from './BoxHeader';
-
-const getCurrentDate = () => {
-    return moment().format("MMMM Do");
-}
-
-const timeLineData = [
-    {
-        'expenseDate':'12th July 2020',
-        'expenseTitle':'Drinking water 20 litres bottle from shop got delivered!',
-        'expenseAmount' : 40,
-        'expenseType': 'dr'
-    },
-    {
-        'expenseDate':'12th July 2020',
-        'expenseTitle':'Maintainance bill',
-        'expenseAmount' : 600,
-        'expenseType': 'dr'
-    },
-    {
-        'expenseDate':'12th July 2020',
-        'expenseTitle':'Google scratch card',
-        'expenseAmount' : 20,
-        'expenseType': 'cr'
-    },
-    {
-        'expenseDate':'12th July 2020',
-        'expenseTitle':'Bigbasket groceries',
-        'expenseAmount' : 1222,
-        'expenseType': 'dr'
-    }
-];
+import {Context} from '../context/Store';
 
 export const ExpenseTimeLine = ({timelineTitle}) => {
+    const [state,dispatch] = useContext(Context);
+    const getCurrentDate = () => {
+        return moment().format("MMMM Do");
+    }
+
     return (
         <div className='box has-background-flat'>
             <BoxHeader headerText={timelineTitle} />
@@ -46,7 +21,7 @@ export const ExpenseTimeLine = ({timelineTitle}) => {
             <div className='timeline'>
                 <TimelineHeader title={getCurrentDate()} />
                 {
-                    timeLineData.map((data,index)=> (
+                    state.timelineData.map((data,index)=> (
                         <TimelineItem 
                             expenseDate={data.expenseDate}
                             expenseTitle={data.expenseTitle}
